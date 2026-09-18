@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Churn Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1 id="badge">Customer Churn Prediction</h1>
+
+    <p>
+        Enter customer details to estimate churn probability and identify customers at risk of leaving.
+    </p>
+
+    </div>
+
+
+    <form action="/predict" method="POST">
+
+
+        <!-- CUSTOMER DETAILS -->
+
+        <div class="section">
+
+            <h2>Customer Details</h2>
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="age">Age</label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        min="18"
+                        max="80"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customer_segment">Customer Segment</label>
+
+                    <select id="customer_segment"
+                            name="customer_segment"
+                            required>
+
+                        <option value="">Select Customer Segment</option>
+
+                        <option value="Basic">Basic</option>
+                        <option value="Premium">Premium</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Enterprise">Enterprise</option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SUBSCRIPTION DETAILS -->
+
+        <div class="section">
+
+            <h2>Subscription Details</h2>
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="tenure_months">
+                        Tenure Months
+                    </label>
+
+                    <input
+                        type="number"
+                        id="tenure_months"
+                        name="tenure_months"
+                        min="1"
+                        max="120"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contract_type">
+                        Contract Type
+                    </label>
+
+                    <select
+                        id="contract_type"
+                        name="contract_type"
+                        required
+                    >
+
+                        <option value="">
+                            Select Contract Type
+                        </option>
+
+                        <option value="Month-to-Month">
+                            Month-to-Month
+                        </option>
+
+                        <option value="One Year">
+                            One Year
+                        </option>
+
+                        <option value="Two Year">
+                            Two Year
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BILLING DETAILS -->
+
+        <div class="section">
+
+            <h2>Billing Details</h2>
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="monthly_charges">
+                        Monthly Charges
+                    </label>
+
+                    <input
+                        type="number"
+                        id="monthly_charges"
+                        name="monthly_charges"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="payment_method">
+                        Payment Method
+                    </label>
+
+                    <select
+                        id="payment_method"
+                        name="payment_method"
+                        required
+                    >
+
+                        <option value="">
+                            Select Payment Method
+                        </option>
+
+                        <option value="Bank Transfer">
+                            Bank Transfer
+                        </option>
+
+                        <option value="Credit Card">
+                            Credit Card
+                        </option>
+
+                        <option value="Debit Card">
+                            Debit Card
+                        </option>
+
+                        <option value="Digital Wallet">
+                            Digital Wallet
+                        </option>
+
+                        <option value="Cash">Cash</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="auto_payment">
+                        Auto Payment
+                    </label>
+
+                    <select
+                        id="auto_payment"
+                        name="auto_payment"
+                        required
+                    >
+
+                        <option value="">
+                            Select Auto Payment
+                        </option>
+
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="discount_received">
+                        Discount Received
+                    </label>
+
+                    <select
+                        id="discount_received"
+                        name="discount_received"
+                        required
+                    >
+
+                        <option value="">
+                            Select Discount Received
+                        </option>
+
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="discount_percent">
+                        Discount Percent
+                    </label>
+
+                    <input
+                        type="number"
+                        id="discount_percent"
+                        name="discount_percent"
+                        min="0"
+                        max="100"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SERVICE DETAILS -->
+
+        <div class="section">
+
+            <h2>Service Details</h2>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="online_security">
+                        Online Security
+                    </label>
+
+                    <select
+                        id="online_security"
+                        name="online_security"
+                        required
+                    >
+
+                        <option value="">
+                            Select Online Security
+                        </option>
+
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="tech_support">
+                        Tech Support
+                    </label>
+
+                    <select
+                        id="tech_support"
+                        name="tech_support"
+                        required
+                    >
+
+                        <option value="">
+                            Select Tech Support
+                        </option>
+
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CUSTOMER ACTIVITY -->
+
+        <div class="section">
+
+            <h2>Customer Activity & Experience</h2>
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="avg_monthly_usage_gb">
+                        Average Monthly Usage (GB)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="avg_monthly_usage_gb"
+                        name="avg_monthly_usage_gb"
+                        min="0"
+                        step="0.01"
+                        max="400"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="num_logins_last_month">
+                        Number of Logins Last Month
+                    </label>
+
+                    <input
+                        type="number"
+                        id="num_logins_last_month"
+                        name="num_logins_last_month"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="support_tickets_last_6_months">
+                        Support Tickets Last 6 Months
+                    </label>
+
+                    <input
+                        type="number"
+                        id="support_tickets_last_6_months"
+                        name="support_tickets_last_6_months"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="late_payments_last_year">
+                        Late Payments Last Year
+                    </label>
+
+                    <input
+                        type="number"
+                        id="late_payments_last_year"
+                        name="late_payments_last_year"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customer_satisfaction">
+                        Customer Satisfaction
+                    </label>
+
+                    <input
+                        type="number"
+                        id="customer_satisfaction"
+                        name="customer_satisfaction"
+                        min="1"
+                        max="5"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="complaints_last_year">
+                        Complaints Last Year
+                    </label>
+
+                    <input
+                        type="number"
+                        id="complaints_last_year"
+                        name="complaints_last_year"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="last_interaction_days">
+                        Last Interaction Days
+                    </label>
+
+                    <input
+                        type="number"
+                        id="last_interaction_days"
+                        name="last_interaction_days"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="marketing_emails_opened">
+                        Marketing Emails Opened
+                    </label>
+
+                    <input
+                        type="number"
+                        id="marketing_emails_opened"
+                        name="marketing_emails_opened"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="cross_sell_products">
+                        Cross Sell Products
+                    </label>
+
+                    <input
+                        type="number"
+                        id="cross_sell_products"
+                        name="cross_sell_products"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SUBMIT BUTTON -->
+
+        <div class="button-box">
+
+            <button type="submit">
+                Predict Churn
+            </button>
+
+        </div>
+
+
+    </form>
+
+
+    <!-- Display prediction result and churn probability -->        
+
+    {% if prediction %}
+
+    <div class="result {{ result_class }}">
+
+        <h2>Prediction Result</h2>
+
+        <p>{{ prediction }}</p>
+
+        {% if probability is defined %}
+
+            <div class="probability-box">
+                <span>Churn Probability</span>
+                <strong>{{ probability }}%</strong>
+            </div>
+
+        {% endif %}
+
+
+        {% if error %}
+
+            <p>{{ error }}</p>
+
+        {% endif %}
+
+    </div>
+
+    {% endif %}
+
+
+</div>
+
+</body>
+
+</html>

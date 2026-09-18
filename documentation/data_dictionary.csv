@@ -1,0 +1,37 @@
+Column,Description
+Customer_ID,Unique customer identifier
+Age,Customer age in years
+Gender,Customer gender
+Region,Customer geographic region
+City_Tier,City tier based on market size
+Customer_Segment,Customer value or business segment
+Tenure_Months,Number of months the customer has stayed with the company
+Contract_Type,Customer contract type
+Subscription_Plan,Current subscription plan
+Monthly_Charges,Monthly service charges
+Total_Charges,Total charges accumulated over customer tenure
+Payment_Method,Customer payment method
+Auto_Payment,Whether automatic payment is enabled
+Paperless_Billing,Whether customer uses paperless billing
+Internet_Service,Type of internet service used
+Phone_Service,Whether customer has phone service
+Streaming_Service,Whether customer uses streaming service
+Online_Security,Whether online security service is enabled
+Tech_Support,Whether technical support service is enabled
+Device_Protection,Whether device protection service is enabled
+Avg_Monthly_Usage_GB,Average monthly data usage in GB
+Num_Logins_Last_Month,Number of customer logins in the last month
+Support_Tickets_Last_6_Months,Number of support tickets raised in last six months
+Late_Payments_Last_Year,Number of late payments in the last year
+Customer_Satisfaction,Customer satisfaction score from 1 to 5
+NPS_Score,Net Promoter Score from -100 to 100
+Discount_Received,Whether customer received a discount
+Discount_Percent,Discount percentage received
+Complaints_Last_Year,Number of complaints in the last year
+Last_Interaction_Days,Days since last customer interaction
+Marketing_Emails_Opened,Number of marketing emails opened
+Cross_Sell_Products,Number of additional products purchased
+Customer_Lifetime_Value,Estimated customer lifetime value
+Churn_Risk_Score,Calculated churn risk score from 0 to 100
+Churn_Reason,Primary churn reason if customer churned
+Churn,Target variable indicating whether customer churned
