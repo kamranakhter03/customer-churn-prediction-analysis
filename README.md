@@ -65,14 +65,14 @@ Detailed EDA, feature selection, preprocessing, and model comparison are availab
 ## 🔄 Project Workflow
 
 ```text
-            Customer Dataset
-                    ↓
-           PostgreSQL Database
-                    ↓
-         Python / Jupyter Notebook
-                    ↓
-         Data Quality Checks & EDA
-                    ↓
+                 Customer Dataset
+                        ↓
+               PostgreSQL Database
+                        ↓
+             Python / Jupyter Notebook
+                        ↓
+             Data Quality Checks & EDA
+                        ↓
       ┌────────────────────────────────────┐
       ↓                                    ↓
 Power BI Dashboard        Feature Selection & Preprocessing
