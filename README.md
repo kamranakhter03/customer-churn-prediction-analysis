@@ -539,8 +539,8 @@ Customer Churn Prediction Projects/
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd "Customer Churn Prediction Projects"
+git clone https://github.com/kamranakhter03/customer-churn-prediction-analysis.git
+cd customer-churn-prediction-analysis
 ```
 
 ### 2. Install Dependencies
