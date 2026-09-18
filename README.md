@@ -4,6 +4,62 @@ An end-to-end customer churn analytics and machine learning project that combine
 
 ---
 
+## 🛠️ Tech Stack
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/Jupyter%20Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white">
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge">
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white">
+  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black">
+  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+</p>
+
+<p align="left">
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white">
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white">
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white">
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge">
+  <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
+</p>
+
+---
+
+## 📊 Project Preview
+
+### Power BI Dashboard
+
+<p align="center">
+  <img src="dashboard/Customer_Churn_Dashboard.png" width="100%">
+</p>
+
+### Flask Web Application
+
+<p align="center">
+  <img src="images/web_app_interface.png" width="65%">
+</p>
+
+### Prediction Examples
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <b>Churn Prediction</b><br><br>
+      <img src="images/churn_prediction.png" width="100%">
+    </td>
+    <td width="50%" align="center">
+      <b>No Churn Prediction</b><br><br>
+      <img src="images/no_churn_prediction.png" width="100%">
+    </td>
+  </tr>
+</table>
+
+---
+
 ## Project Overview
 
 Customer churn directly affects retention and long-term business performance. This project was built to analyze customer behavior, understand the main factors associated with churn, and develop a machine learning model that can estimate churn risk for an individual customer.
